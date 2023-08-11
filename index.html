@@ -83,7 +83,7 @@
                                 },
                                 "geometry": {
                                     "type": "Point",
-                                    "coordinates": [3.9518616099817, 51.173102904346806]                                   
+                                    "coordinates": [4.074628939149434,51.07177060193755]                                   
                                 }
                             },
 
@@ -200,7 +200,7 @@
             
             getDataAddMarkers = function( {label, value, map, exclamation} ) {
                 map.eachLayer(function (layer) {
-                        if (layer instanceof L.Marker) or if(layer instanceof L.Path) {
+                        if (layer instanceof L.Marker) {
                             map.removeLayer(layer);
                         }
                 });
