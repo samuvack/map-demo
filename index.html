@@ -24,13 +24,27 @@
 
 
         <script type="text/javascript">
-            data = {"type": "FeatureCollection",
+            data =  {"type": "FeatureCollection",
                         "features": [
                             {
                                 "type": "Feature",
                                 "properties": {
-                                    "title": "Day 1",
-                                    "content": "This is where some people moved to."
+                                    "title": "Januari",
+                                    "content": "Demo kaartapplicatie Vlaamse Smart Data Space"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        3.698805, 51.0269849,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "Februari",
+                                    "content": "Demo kaartapplicatie Vlaamse Smart Data Space"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -43,14 +57,13 @@
                             {
                                 "type": "Feature",
                                 "properties": {
-                                    "title": "The Next Day",
-                                    "content": "This is where some people grooved to."
+                                    "title": "Maart",
+                                    "content": "Demo kaartapplicatie Vlaamse Smart Data Space"
                                 },
                                 "geometry": {
                                     "type": "Point",
                                     "coordinates": [
-                                        -74.3838,
-                                        40.9148,
+                                         4.074628939149434,51.07177060193755,
                                         1
                                     ]
                                 }
@@ -58,23 +71,8 @@
                             {
                                 "type": "Feature",
                                 "properties": {
-                                    "title": "Amazing Event",
-                                    "content": "This is where they went to have fun."
-                                },
-                                "geometry": {
-                                    "type": "Point",
-                                    "coordinates": [
-                                        4.899431,
-                                        52.379189,
-                                        1
-                                    ]
-                                }
-                            },
-                            {
-                                "type": "Feature",
-                                "properties": {
-                                    "title": "1776",
-                                    "content": "This where they went when the revolution had begun."
+                                    "title": "April",
+                                    "content": "Demo kaartapplicatie Vlaamse Smart Data Space"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -88,8 +86,8 @@
                             {
                                 "type": "Feature",
                                 "properties": {
-                                    "title": "1776",
-                                    "content": "This where they went when the revolution had begun."
+                                    "title": "Mei",
+                                    "content": "Demo kaartapplicatie Vlaamse Smart Data Space"
                                     
                                 },
                                 "geometry": {
@@ -104,8 +102,8 @@
                             {
                                 "type": "Feature",
                                 "properties": {
-                                    "title": "1984",
-                                    "content": "So they all came here...and disappeared without a trace!"
+                                    "title": "Juni",
+                                    "content": "Demo kaartapplicatie Vlaamse Smart Data Space"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -119,8 +117,8 @@
                             {
                                 "type": "Feature",
                                 "properties": {
-                                    "title": "12/22/63",
-                                    "content": "Now, this can be quite the scary place."
+                                    "title": "Juli",
+                                    "content": "Demo kaartapplicatie Vlaamse Smart Data Space"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -133,6 +131,7 @@
                             },
                         ]
                     }
+
 
             
             var mymap = L.map('mapid')
@@ -167,7 +166,7 @@
             };
 
             L.control.timelineSlider({
-                timelineItems: ["Day 1", "The Next Day", "Amazing Event", "1776", "12/22/63", "1984"], 
+                timelineItems: ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli"], 
                 changeMap: getDataAddMarkers,
                 extraChangeMapParams: {exclamation: "Hello World!"} })
             .addTo(mymap);             
