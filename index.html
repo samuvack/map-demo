@@ -202,6 +202,9 @@
                 map.eachLayer(function (layer) {
                         if (layer instanceof L.Marker) {
                             map.removeLayer(layer);
+                        },
+                        if(layer instanceof L.Path){
+                        map.removeLayer(layer);
                         }
                 });
 
