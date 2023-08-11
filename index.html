@@ -229,7 +229,7 @@
                 var markerArray = [];
                 L.geoJson(filteredData, {
                     onEachFeature: function onEachFeature(feature, layer) {
-                        content = `${exclamation} <br> ${feature.properties.content} <br> (${Math.round(value/6 * 100)}% done with story)`
+                        content = `${exclamation} <br> ${feature.properties.content} <br>  ${feature.properties.title} )`
                         var popup = L.popup().setContent(content);
                         layer.bindPopup(popup);
                         markerArray.push(layer);
@@ -243,7 +243,7 @@
             L.control.timelineSlider({
                 timelineItems: ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"], 
                 changeMap: getDataAddMarkers,
-                extraChangeMapParams: {exclamation: "Hello World!"} })
+                extraChangeMapParams: {exclamation: "Vlaamse Smart Data Space"} })
             .addTo(mymap);             
         </script>
     </body>
