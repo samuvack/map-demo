@@ -1,30 +1,4 @@
-<html lang = "en">
-
-<head>
-    <meta charset = "UTF-8" />
-    <title>Leaflet Timeline Slider</title>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
-
-    <script src="src/leaflet-timeline-slider.js"></script>
-    
-</head>
-    <body>
-        <div id="mapid" style="height: 600px;">
-        </div>
-
-
-        <script type="text/javascript">
-            data =  {"type": "FeatureCollection",
+ {"type": "FeatureCollection",
                         "features": [
                             {
                                 "type": "Feature",
@@ -131,46 +105,3 @@
                             },
                         ]
                     }
-
-
-            
-            var mymap = L.map('mapid')
-            
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(mymap);
-            
-            getDataAddMarkers = function( {label, value, map, exclamation} ) {
-                map.eachLayer(function (layer) {
-                        if (layer instanceof L.Marker) {
-                            map.removeLayer(layer);
-                        }
-                });
-
-                filteredData = data.features.filter(function (i, n) {
-                    return i.properties.title===label;
-                    });
-
-                var markerArray = [];
-                L.geoJson(filteredData, {
-                    onEachFeature: function onEachFeature(feature, layer) {
-                        content = `${exclamation} <br> ${feature.properties.content} <br> (${Math.round(value/6 * 100)}% done with story)`
-                        var popup = L.popup().setContent(content);
-                        layer.bindPopup(popup);
-                        markerArray.push(layer);
-                    }
-                }).addTo(map);
-                
-                var markerGroup = L.featureGroup(markerArray);
-                map.fitBounds(markerGroup.getBounds()).setZoom(12);
-            };
-
-            L.control.timelineSlider({
-                timelineItems: ["Day 1", "The Next Day", "Amazing Event", "1776", "12/22/63", "1984"], 
-                changeMap: getDataAddMarkers,
-                extraChangeMapParams: {exclamation: "Hello World!"} })
-            .addTo(mymap);             
-        </script>
-    </body>
-
-</html>
