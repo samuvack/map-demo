@@ -65,6 +65,11 @@
                                     "coordinates": [
                                          4.074628939149434,51.07177060193755,
                                         1
+                                    ],
+                                    "type": "Point",
+                                    "coordinates": [
+                                         3.9318616099817, 51.173102904346806,
+                                        1
                                     ]
                                 }
                             },
@@ -229,7 +234,7 @@
                 var markerArray = [];
                 L.geoJson(filteredData, {
                     onEachFeature: function onEachFeature(feature, layer) {
-                        content = `${exclamation} <br> ${feature.properties.content} <br>  ${feature.properties.title} )`
+                        content = `${exclamation} <br> ${feature.properties.content} <br> (${feature.properties.title})`
                         var popup = L.popup().setContent(content);
                         layer.bindPopup(popup);
                         markerArray.push(layer);
