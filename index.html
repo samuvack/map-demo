@@ -200,11 +200,8 @@
             
             getDataAddMarkers = function( {label, value, map, exclamation} ) {
                 map.eachLayer(function (layer) {
-                        if (layer instanceof L.Marker) {
+                        if (layer instanceof L.Marker) or if(layer instanceof L.Path) {
                             map.removeLayer(layer);
-                        },
-                        if(layer instanceof L.Path){
-                        map.removeLayer(layer);
                         }
                 });
 
